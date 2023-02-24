@@ -21,11 +21,16 @@ public class Ejercicio_05 {
 //g) Método consultarSaldo(): permitirá consultar el saldo disponible en la cuenta.
 //h) Método consultarDatos(): permitirá mostrar todos los datos de la cuenta
     public static void main(String[] args) {
+
+        // Crear Clase Scanner para leer datos desde teclado.
+        // Crear Objeto del tipo clase Rectangulo.
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         CuentaService ver = new CuentaService();
-        // Ingreso de datos de cuenta    
+
+        // Ingreso de datos de cuenta   
         ver.crearCuenta();
-        // MENU DE OPCIONES 
+        
+        // MENU DE OPCIONES para realizar transacciones.
         int opc;
         do {
             System.out.println("MENU DE OPCIONES");

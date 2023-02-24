@@ -1,16 +1,17 @@
 package Ejercicios_practicos.Ejercicio_07.Entidad;
 
 public class Persona {
-             
+    // Declaración de atributos.       
     private String nombre;
     private int edad;
     private char sexo;
     private float peso;
     private float altura;
 
+    // Metodo vacio.
     public Persona() {
     }
-
+    // Metodo por parametros.
     public Persona(String nombre, int edad, char sexo, float peso, float altura) {
         this.nombre = nombre;
         this.edad = edad;
@@ -18,7 +19,7 @@ public class Persona {
         this.peso = peso;
         this.altura = altura;
     }
-
+    // Metodos predefinidos GET Y SET para los distintos atributos. 
     public String getNombre() {
         return nombre;
     }
@@ -58,7 +59,4 @@ public class Persona {
     public void setAltura(float altura) {
         this.altura = altura;
     }
-
-    
-    
 }

@@ -1,5 +1,7 @@
 package Ejercicios_practicos.Ejercicio_02;
 
+import Ejercicios_practicos.Ejercicio_02.Entidades.Circunferencia;
+
 public class Ejercicio_02 {
     //Declarar una clase llamada Circunferencia que tenga como atributo privado
     //el radio de tipo real. A continuación, se deben crear los siguientes métodos:
@@ -10,17 +12,22 @@ public class Ejercicio_02 {
     //e)Método perimetro(): para calcular el perímetro (Perimetro = 2 * pi * radio).
 
     public static void main(String[] args) {
-        Circunferencia objeto1 = new Circunferencia();
+        Circunferencia objeto = new Circunferencia();
 
-        // INGRESO DE VALOR DE RADIO
-        objeto1.crearCircunferencia();
+        /**
+         * Ingreso de radio para definir una circunferencia.
+         */
+        objeto.crearCircunferencia();
 
-        // CALCULO DE AREA
-        System.out.println("Area : " + objeto1.area()+ "[cm^2]");
-        
-        
-        // CALCULO DE PERIMETRO   
-        System.out.println("Perimetro : " + objeto1.perimetro() + "[cm]");
+        /**
+         * Calculo de área.
+         */
+        objeto.area();
+
+        /**
+         * Calculo de perimetro.
+         */
+        objeto.perimetro();
     }
 
 }

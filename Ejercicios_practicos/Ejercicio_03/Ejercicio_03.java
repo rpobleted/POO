@@ -1,5 +1,7 @@
 package Ejercicios_practicos.Ejercicio_03;
 
+import Ejercicios_practicos.Ejercicio_03.Services.OperacionServices;
+
 public class Ejercicio_03 {
 
     // Crear una clase llamada Operacion que tenga como atributos privados
@@ -21,23 +23,21 @@ public class Ejercicio_03 {
     //el resultado al main.
     public static void main(String[] args) {
 
-        Operacion objeto1 = new Operacion();
+        OperacionServices ver = new OperacionServices();
 
         // Ingreso de números y almacenado en objeto
-        objeto1.crearOperacion();
+        ver.crearOperacion();
 
         //Calculo SUMA
-        System.out.println("La suma de los número es : " + objeto1.sumar());
+        System.out.println("La suma de los número es : " + ver.sumar());
 
         //Calculo RESTA
-        System.out.println("La resta de los número es : " + objeto1.resta());
-       
-        //Calculo MULTIPLICACION
-        System.out.println("La multiplicación de los número es : " + objeto1.multiplicacion());
-        
-        //Calculo DIVISION
-        System.out.println("La división de los número es : " + objeto1.division());
-        
-    }
+        System.out.println("La resta de los número es : " + ver.resta());
 
+        //Calculo MULTIPLICACION
+        System.out.println("La multiplicación de los número es : " + ver.multiplicacion());
+
+        //Calculo DIVISION
+        System.out.println("La división de los número es : " + ver.division());
+    }
 }

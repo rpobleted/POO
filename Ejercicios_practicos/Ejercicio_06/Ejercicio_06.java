@@ -22,14 +22,19 @@ public class Ejercicio_06 {
 //g) Método agregarCafe(int): se le pide al usuario una cantidad de café, el método lo
 // recibe y se añade a la cafetera la cantidad de café indicada.
     public static void main(String[] args) {
+
+        // Crear Clase Scanner para leer datos desde teclado.
+        // Crear Objeto del tipo clase Rectangulo.
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        int taza;
-        int opc;
         CafeteraService ver = new CafeteraService();
 
+        // Variables.
+        int opc;
+        
+        // Definir capacidad máxima de la cafetera.
         ver.seteoMaximo();
 
-        // DEFINIR CAPACIDAD MAXIMA DE LA CAFETERA
+        // Menu de opciones para ejecutar acciones.
         do {
             System.out.println("* * * * * * * * MENU CAFETERA * * * * * * * *");
             System.out.println("1. Llenar cafetera al máximo");
@@ -40,7 +45,6 @@ public class Ejercicio_06 {
             System.out.print("Ingrese una opción : ");
             opc = leer.nextInt();
             System.out.println("----------------------------------------------");
-
             switch (opc) {
                 case 1:
                     ver.llenarCafetera();
@@ -59,9 +63,8 @@ public class Ejercicio_06 {
                     System.out.print("Ingrese el total de la recarga en [ml] : ");
                     ver.agregarCafe(leer.nextInt());
                     break;
-
             }
-        } while (opc!=5);
+        } while (opc != 5);
         System.out.println("Saliendo ...");
     }
 }
