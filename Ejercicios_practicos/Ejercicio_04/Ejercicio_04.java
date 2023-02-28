@@ -1,5 +1,6 @@
 package Ejercicios_practicos.Ejercicio_04;
 
+import Ejercicios_practicos.Ejercicio_04.Entidad.Rectangulo;
 import Ejercicios_practicos.Ejercicio_04.Services.RectanguloService;
 
 
@@ -10,21 +11,22 @@ public class Ejercicio_04 {
      */
     public static void main(String[] args) {
 
-        RectanguloService ver = new RectanguloService();
+        // Instanciar un objeto de servicio para realizar las operaciones
+        RectanguloService sv = new RectanguloService();
         
         // INGRESO DE DATOS Y ALMACENAR EN OBJETO
-        ver.crearRectangulo();
+        Rectangulo rectangulo1 = sv.crearRectangulo();
 
         System.out.println("---------------------------------------------------------");
         
         // CALCULO DE AREA
-        System.out.println("El área del rectangulo es      : " + ver.areaRectangulo()+"cm^2");
+        System.out.println("El área del rectangulo es      : " + sv.areaRectangulo(rectangulo1)+"cm^2");
 
         // CALCULO DE PERIMETRO
-        System.out.println("El perímetro del rectangulo es : " + ver.perimetroRectangulo()+"cm");
+        System.out.println("El perímetro del rectangulo es : " + sv.perimetroRectangulo(rectangulo1)+"cm");
 
         // VISUALIZAR RECTANGULO
-        ver.dibujarRectangulo();
+        sv.dibujarRectangulo(rectangulo1);
     }
 
 }

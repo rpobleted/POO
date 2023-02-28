@@ -8,7 +8,7 @@ public class Circunferencia {
     /**
      * Variable publica radio.
      */
-    public int radio;
+    private int radio;
 
     /**
      * Metodo vacio para instanciar un objeto.
@@ -49,7 +49,7 @@ public class Circunferencia {
      */
     public void crearCircunferencia() {
         System.out.print("Ingresa el radio de la circunferencia [CM]: ");
-        this.radio = leer.nextInt();
+        this.radio=leer.nextInt();
     }
 
     //d) Método area(): para calcular el área de la circunferencia (Area = pi * radio^2). La funcion retorna valor.
@@ -62,5 +62,9 @@ public class Circunferencia {
     public void perimetro() {
         double perimetro = 2 * Math.PI * getRadio();
         System.out.println("Perimetro : " + perimetro + "[cm]");
+    }
+
+    private void getRadio(int nextInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

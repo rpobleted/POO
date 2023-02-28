@@ -1,5 +1,6 @@
 package Ejercicios_practicos.Ejercicio_05;
 
+import Ejercicios_practicos.Ejercicio_05.Entidad.Cuenta;
 import Ejercicios_practicos.Ejercicio_05.Services.CuentaService;
 import java.util.Scanner;
 
@@ -23,13 +24,14 @@ public class Ejercicio_05 {
     public static void main(String[] args) {
 
         // Crear Clase Scanner para leer datos desde teclado.
-        // Crear Objeto del tipo clase Rectangulo.
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        CuentaService ver = new CuentaService();
-
-        // Ingreso de datos de cuenta   
-        ver.crearCuenta();
         
+        // Instanaciar un objeto para poder realizar las operaciones.
+        CuentaService sv = new CuentaService();
+
+        // Creación e ingreso de datos de nueva cuenta.
+        Cuenta persona1 = sv.crearCuenta();
+
         // MENU DE OPCIONES para realizar transacciones.
         int opc;
         do {
@@ -46,20 +48,20 @@ public class Ejercicio_05 {
             switch (opc) {
                 case 1:
                     System.out.println("Ingresa el monto a depositar :");
-                    ver.ingresarDinero(leer.nextInt());
+                    sv.ingresarDinero(persona1, leer.nextInt());
                     break;
                 case 2:
                     System.out.println("Ingresa el monto a retirar :");
-                    ver.retiroDinero(leer.nextInt());
+                    sv.retiroDinero(persona1, leer.nextInt());
                     break;
                 case 3:
-                    ver.retiroExpress();
+                    sv.retiroExpress(persona1);
                     break;
                 case 4:
-                    ver.consultarSaldo();
+                    sv.consultarSaldo(persona1);
                     break;
                 case 5:
-                    ver.consultarDatos();
+                    sv.consultarDatos(persona1);
                     break;
             }
         } while (opc != 6);

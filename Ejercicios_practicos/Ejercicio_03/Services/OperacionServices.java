@@ -14,25 +14,27 @@ public class OperacionServices {
     //Llamado al objeto scanner para habilitar ingreso de datos por teclado.
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-    //Creación de objeto e inicializar.
-    Operacion objeto = new Operacion();
-
     /**
      * Metodo para el ingreso de 2 numeros, sin retorno
+     *
+     * @return
      */
-    public void crearOperacion() {
+    public Operacion crearOperacion() {
+        Operacion objeto = new Operacion();
         System.out.println("Ingresa primer número");
         objeto.setNumero1(leer.nextInt());
         System.out.println("Ingresa segundo número");
         objeto.setNumero2(leer.nextInt());
+        return objeto;
     }
 
     /**
      * Metodo para sumar los valores de los 2 atributos del objeto.
      *
+     * @param objeto
      * @return suma.
      */
-    public int sumar() {
+    public int sumar(Operacion objeto) {
         int suma = (objeto.getNumero1() + objeto.getNumero2());
         return suma;
     }
@@ -40,9 +42,10 @@ public class OperacionServices {
     /**
      * Metodo para restar los valores de los 2 atributos del objeto
      *
+     * @param objeto
      * @return resta
      */
-    public int resta() {
+    public int resta(Operacion objeto) {
         int resta = objeto.getNumero1() - objeto.getNumero2();
         return resta;
     }
@@ -52,9 +55,10 @@ public class OperacionServices {
      * el caso de que uno de los numeros sea cero retorna 0, sino ejecuta la
      * multiplicación normalmente.
      *
+     * @param objeto
      * @return multiplicación
      */
-    public int multiplicacion() {
+    public int multiplicacion(Operacion objeto) {
         int multiplicacion;
         if (objeto.getNumero1() != 0 && objeto.getNumero2() != 0) {
             multiplicacion = objeto.getNumero1() * objeto.getNumero2();
@@ -68,10 +72,10 @@ public class OperacionServices {
     /**
      * Metodo para dividir ambos valores de los atributos. En el caso de que el
      * segundo numero sea 0, retorna mensaje de error.
-     *
+     * @param objeto
      * @return division.
      */
-    public float division() {
+    public float division(Operacion objeto) {
         int division;
         if (objeto.getNumero2() != 0) {
             division = objeto.getNumero1() / objeto.getNumero2();
@@ -81,4 +85,5 @@ public class OperacionServices {
         }
         return division;
     }
+
 }

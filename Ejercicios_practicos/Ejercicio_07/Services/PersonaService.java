@@ -25,7 +25,7 @@ public class PersonaService {
         objeto.setEdad(leer.nextInt());
         do {
             System.out.print("Sexo [h-m-o]      : ");
-            letra = leer.next().charAt(0); 
+            letra = leer.next().charAt(0);
             if (Character.compare(letra, 'h') == 0 || Character.compare(letra, 'm') == 0 || Character.compare(letra, 'o') == 0) {
                 objeto.setSexo(letra);
                 break;

@@ -26,13 +26,13 @@ public class Ejercicio_06 {
         // Crear Clase Scanner para leer datos desde teclado.
         // Crear Objeto del tipo clase Rectangulo.
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        CafeteraService ver = new CafeteraService();
+        CafeteraService sv = new CafeteraService();
 
         // Variables.
         int opc;
         
         // Definir capacidad máxima de la cafetera.
-        ver.seteoMaximo();
+        sv.seteoMaximo();
 
         // Menu de opciones para ejecutar acciones.
         do {
@@ -47,21 +47,21 @@ public class Ejercicio_06 {
             System.out.println("----------------------------------------------");
             switch (opc) {
                 case 1:
-                    ver.llenarCafetera();
+                    sv.llenarCafetera();
                     break;
 
                 case 2:
                     System.out.print("Ingrese la capacidad de la taza en [ml] : ");
-                    ver.servirTaza(leer.nextInt());
+                    sv.servirTaza(leer.nextInt());
                     break;
 
                 case 3:
-                    ver.vaciarCafetera();
+                    sv.vaciarCafetera();
                     break;
 
                 case 4:
                     System.out.print("Ingrese el total de la recarga en [ml] : ");
-                    ver.agregarCafe(leer.nextInt());
+                    sv.agregarCafe(leer.nextInt());
                     break;
             }
         } while (opc != 5);

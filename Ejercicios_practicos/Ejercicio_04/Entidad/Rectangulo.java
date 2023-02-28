@@ -1,7 +1,5 @@
 package Ejercicios_practicos.Ejercicio_04.Entidad;
 
-import java.util.Scanner;
-
 public class Rectangulo {
     private int base;
     private int altura;

@@ -1,5 +1,6 @@
 package Ejercicios_practicos.Ejercicio_03;
 
+import Ejercicios_practicos.Ejercicio_03.Entidades.Operacion;
 import Ejercicios_practicos.Ejercicio_03.Services.OperacionServices;
 
 public class Ejercicio_03 {
@@ -23,21 +24,22 @@ public class Ejercicio_03 {
     //el resultado al main.
     public static void main(String[] args) {
 
-        OperacionServices ver = new OperacionServices();
-
-        // Ingreso de números y almacenado en objeto
-        ver.crearOperacion();
-
+        // Instanciamos un objeto de servicio para poder hacer las operaciones.
+        OperacionServices sv = new OperacionServices();
+        
+        // Instanciamos un objeto para poder almacenar y ejecutamos el metodo de carga de numeros.
+        Operacion numeros1=sv.crearOperacion();
+            
         //Calculo SUMA
-        System.out.println("La suma de los número es : " + ver.sumar());
+        System.out.println("La suma de los número es : " + sv.sumar(numeros1));
 
         //Calculo RESTA
-        System.out.println("La resta de los número es : " + ver.resta());
+        System.out.println("La resta de los número es : " + sv.resta(numeros1));
 
         //Calculo MULTIPLICACION
-        System.out.println("La multiplicación de los número es : " + ver.multiplicacion());
+        System.out.println("La multiplicación de los número es : " + sv.multiplicacion(numeros1));
 
         //Calculo DIVISION
-        System.out.println("La división de los número es : " + ver.division());
+        System.out.println("La división de los número es : " + sv.division(numeros1));
     }
 }

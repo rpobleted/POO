@@ -6,9 +6,7 @@ import java.util.Scanner;
 public class CuentaService {
 
     // Crear Clase Scanner para leer datos desde teclado.
-    // Crear Objeto del tipo clase Rectangulo.
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
-    Cuenta cuenta = new Cuenta();
 
     /**
      * Metodo para creación de cuenta con valores para todos los atributos.
@@ -16,6 +14,7 @@ public class CuentaService {
      * @return cuenta.
      */
     public Cuenta crearCuenta() {
+        Cuenta cuenta = new Cuenta();
         System.out.println("*** INGRESO DE NUEVA CUENTA ***");
         System.out.print("Cuenta  :");
         cuenta.setNumero_cuenta(leer.nextInt());
@@ -34,9 +33,10 @@ public class CuentaService {
      * existente. Se recibe como parametro desde el main, la variable dinero que
      * es el importe a sumar.
      *
+     * @param cuenta
      * @param dinero
      */
-    public void ingresarDinero(int dinero) {
+    public void ingresarDinero(Cuenta cuenta,int dinero) {
         System.out.println("INGRESO DE EFECTIVO");
         System.out.println("Saldo actual :$" + cuenta.getSaldo_actual());
         System.out.println("Importe      :$" + dinero);
@@ -50,9 +50,10 @@ public class CuentaService {
      * existente. Se recibe como parametro desde el main, la variable dinero se
      * restara de Saldo.
      *
+     * @param cuenta
      * @param dinero
      */
-    public void retiroDinero(int dinero) {
+    public void retiroDinero(Cuenta cuenta,int dinero) {
         System.out.println("RETIRO DE EFECTIVO");
         System.out.println("Saldo actual :$" + cuenta.getSaldo_actual());
         System.out.println("Retiro       :$" + dinero);
@@ -70,8 +71,9 @@ public class CuentaService {
      * Metodo de retiro sin parametro y sin retorno por lo que dentro solicita
      * el monto a retirar, se valida que el monto a retirar su supere el 20% del
      * saldo. de lo contrario enviara un mensaje de error.
+     * @param cuenta
      */
-    public void retiroExpress() {
+    public void retiroExpress(Cuenta cuenta) {
         System.out.println("Ingresa el monto de retiro express no superior a 20% :");
         int dinero = leer.nextInt();
         System.out.println("RETIRO DE EFECTIVO EXPRESS");
@@ -90,8 +92,9 @@ public class CuentaService {
 
     /**
      * Metodo sin parametros y sin retorno. Muestra el valor del atributo Saldo.
+     * @param cuenta
      */
-    public void consultarSaldo() {
+    public void consultarSaldo(Cuenta cuenta) {
         System.out.println("SALDO DISPONIBLE");
         System.out.println("Total contable :$" + cuenta.getSaldo_actual());
         System.out.println("-------------------------------");
@@ -100,8 +103,9 @@ public class CuentaService {
     /**
      * Metodo sin parametros y sin retorno. Muestra todos los valores de los
      * atributo del objeto.
+     * @param cuenta
      */
-    public void consultarDatos() {
+    public void consultarDatos(Cuenta cuenta) {
         System.out.println("DATOS DE CUENTA");
         System.out.println("N° Cuenta        : " + cuenta.getNumero_cuenta());
         System.out.println("DNI              : " + cuenta.getDni());

@@ -1,5 +1,6 @@
 package Ejercicios_practicos.Ejercicio_07;
 
+import Ejercicios_practicos.Ejercicio_07.Entidad.Persona;
 import Ejercicios_practicos.Ejercicio_07.Services.PersonaService;
 import java.util.Scanner;
 
@@ -44,7 +45,7 @@ public class Ejercicio_07 {
 
         // Creamos un objeto del tipo vector con los atributos de la Clase Persona
         PersonaService vector[] = new PersonaService[n];
-
+       
         // Creamos 2 vectores que nos ayudaran a almacenar los retornos de los resultados de IMC y EDADES.
         int imc[] = new int[n];
         boolean edades[] = new boolean[n];
@@ -52,7 +53,7 @@ public class Ejercicio_07 {
         // Implementamos un bucle for para que de n vueltas de acuerdo a la cantidad de objetos (pacientes) que debemos crear.
         for (int i = 0; i < n; i++) {
             System.out.println("Ingreso Paciente N°" + (i + 1));
-            vector[i] = new PersonaService();
+            vector[i]= new PersonaService();
             vector[i].crearPersona();
             imc[i] = vector[i].calcularImc();
             edades[i] = vector[i].esMayorDeEdad();
