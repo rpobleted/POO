@@ -1,4 +1,4 @@
-    package Ejercicios_practicos.Ejercicio_11;
+package Ejercicios_practicos.Ejercicio_11;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -9,11 +9,11 @@ public class Ejercicio_11 {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingresa una fecha hacia el pasado");
 
-        System.out.println("Ingrese el dia AAAA");
+        System.out.print("Ingrese el año AAAA :");
         int anio = leer.nextInt();
-        System.out.println("Ingrese el mes MM");
+        System.out.print("Ingrese el mes MM :");
         int mes = leer.nextInt();
-        System.out.println("Ingrese el año DD");
+        System.out.print("Ingrese el dia DD :");
         int dia = leer.nextInt();
 
         Date fecha1 = new Date((anio - 1900), (mes - 1), dia);
@@ -22,8 +22,13 @@ public class Ejercicio_11 {
         System.out.println("Fecha actual");
         Date fecha2 = new Date();
         System.out.println(fecha2.toString());
-        
+
         System.out.println("Cuantos años de diferencia");
-        System.out.println(fecha2.getYear()- fecha1.getYear());
+
+        if (fecha1.getMonth()> fecha2.getMonth()) {
+            System.out.println(fecha2.getYear() - fecha1.getYear() - 1);
+        } else {
+            System.out.println(fecha2.getYear() - fecha1.getYear());
+        }
     }
 }

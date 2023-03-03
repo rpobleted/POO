@@ -1,8 +1,6 @@
 package Ejercicios_practicos.Ejercicio_12;
-
 import Ejercicios_practicos.Ejercicio_12.Entidades.Persona;
 import Ejercicios_practicos.Ejercicio_12.Services.PersonaService;
-import java.util.Scanner;
 
 public class Ejercicio_12 {
 

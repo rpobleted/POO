@@ -43,7 +43,14 @@ public class PersonaService {
         Date fechaActual = new Date();
         System.out.println("----------------");
         System.out.print("Edad: ");
-        int edad = (fechaActual.getYear()) - (objeto.getFechaNacimiento().getYear());
+        int edad;
+        int validadorMes = objeto.getFechaNacimiento().getMonth();
+
+        if (validadorMes < fechaActual.getMonth()) {
+            edad = (fechaActual.getYear()) - (objeto.getFechaNacimiento().getYear());
+        } else {
+            edad = (fechaActual.getYear()) - (objeto.getFechaNacimiento().getYear())-1;
+        }
         System.out.println(edad);
         System.out.println("---------------");
         return edad;
@@ -59,7 +66,7 @@ public class PersonaService {
      */
     public void menorQue(int edad) {
 
-        System.out.print("Ingresa una nueva edad para comparar si es menor : ");
+        System.out.print("Ingresa una nueva edad para comparar si la persona es mayor : ");
         int valor = leer.nextInt();
         if (edad > valor) {
             System.out.println("Verdadero");

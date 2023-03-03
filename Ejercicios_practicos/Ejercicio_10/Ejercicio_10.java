@@ -46,7 +46,7 @@ public class Ejercicio_10 {
      */
     public static void operacionArreglo(double arreglo1[], double arreglo2[]) {
         Arrays.sort(arreglo1);
-        arreglo2 = Arrays.copyOfRange(arreglo1, 0, 20);
+        arreglo2 = Arrays.copyOfRange(arreglo1, 0,20);
         Arrays.fill(arreglo2, 10, 20, 0.5);
         mostrarArreglo(arreglo2);
     }
