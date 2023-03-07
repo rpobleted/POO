@@ -4,9 +4,7 @@ import Ejercicios_practicos.Ejercicio_13.Entidades.Curso;
 import java.util.Scanner;
 
 public class CursoService {
-
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
-
     public String[] cargarAlumnos() {
         System.out.println("*** Ingreso de alumnos ***");
         String[] arreglo = new String[5];
@@ -29,7 +27,6 @@ public class CursoService {
         System.out.print("Turno AM o PM :");
         boolean salir = true;
         do {
-
             String validador = leer.next();
             if (validador.equalsIgnoreCase("AM") || validador.equalsIgnoreCase("PM")) {
                 objeto.setTurno(validador);
@@ -38,7 +35,6 @@ public class CursoService {
                 System.out.println("Ingreso invalido, vuelva a intentar");
             }
         } while (salir);
-
         System.out.print("Precio por hora trabajada :");
         objeto.setPrecioPorHora(leer.nextDouble());
         objeto.setAlumnos(cargarAlumnos());
@@ -47,10 +43,7 @@ public class CursoService {
 
     public void calcularGananciaSemanal(Curso curso) {
         double valor;
-
         valor = curso.getCantidadDeHorasPorDia() * curso.getCantidadDiasPorSemana() * curso.getPrecioPorHora() * curso.getAlumnos().length;
         System.out.println("Las ganacias semanales son : $" + valor);
-
     }
-
 }
