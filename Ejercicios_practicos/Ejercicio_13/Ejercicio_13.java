@@ -34,6 +34,7 @@ public class Ejercicio_13 {
 
         CursoService sv = new CursoService();
         Curso curso = new Curso();
+        
         curso = sv.crearCurso();
         sv.calcularGananciaSemanal(curso);
     }
