@@ -30,25 +30,30 @@ public class AhorcadoService {
     }
 
     public boolean buscar(Ahorcado objeto, String letra) {
-        if (Arrays.asList(objeto.getPalabra()).contains(letra) == true) {
+        if (Arrays.asList(objeto.getPalabra()).contains(letra)) {
             System.out.println("Mensaje: La letra pertenece a la palabra");
             return true;
         } else {
             System.out.println("Mensaje: La letra no pertenece a la palabra");
-            objeto.setJugadasMax(objeto.getJugadasMax() - 1);
+
             return false;
         }
     }
 
     public void encontradas(Ahorcado objeto, String letra) {
         String vector[] = objeto.getPalabra();
-        int encontradas = 0;
+        String vectorCompleto[] = new String[objeto.getPalabra().length];
 
-        for (int i = 0; i < (longitud(objeto)); i++) {
-            if (vector[i].equals(letra)) {
-                encontradas++;
-                objeto.setEncontradas(objeto.getEncontradas() + 1);
+        if (Arrays.asList(objeto.getPalabra()).contains(letra)) {
+            for (int i = 0; i < (longitud(objeto)); i++) {
+                if (vector[i].equals(letra)) {
+                    vectorCompleto[i] = vector[i];
+                    System.out.println(vectorCompleto[0] + vectorCompleto[1] + vectorCompleto[2] + vectorCompleto[3]);
+                    objeto.setEncontradas(objeto.getEncontradas() + 1);
+                }
             }
+        } else {
+            objeto.setJugadasMax(objeto.getJugadasMax() - 1);
         }
         System.out.println("Número de letras (encontradas, faltantes): (" + objeto.getEncontradas() + "," + (longitud(objeto) - objeto.getEncontradas()) + ")");
     }
@@ -56,5 +61,35 @@ public class AhorcadoService {
     public void intentos(Ahorcado objeto) {
         System.out.println("Número de oportunidades restantes: " + objeto.getJugadasMax());
         System.out.println("--------------------------");
+    }
+
+    public void juego(Ahorcado objeto) {
+        objeto = crearJuego();
+        do {
+            System.out.print("Ingrese una letra :");
+            String letra = leer.next();
+            System.out.println("Longitud de la palabra: " + longitud(objeto));
+            buscar(objeto, letra);
+            encontradas(objeto, letra);
+            intentos(objeto);
+
+            if (objeto.getEncontradas() == longitud(objeto)) {
+                System.out.println("Palabra encontrada");
+            }
+            if (objeto.getJugadasMax() == 0) {
+                System.out.println("Excediste la cantidad de intentos");
+            }
+        } while (objeto.getJugadasMax() != 0 && objeto.getEncontradas() != longitud(objeto));
+    }
+
+    private int contarElementos(String[] vectorCompleto) {
+        int contador = 0;
+
+        for (int i = 0; i < vectorCompleto.length; i++) {
+            if (!"".equals(vectorCompleto[i])) {
+                contador++;
+            }
+        }
+        return contador;
     }
 }

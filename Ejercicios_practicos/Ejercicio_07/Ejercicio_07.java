@@ -1,6 +1,5 @@
 package Ejercicios_practicos.Ejercicio_07;
 
-import Ejercicios_practicos.Ejercicio_07.Entidad.Persona;
 import Ejercicios_practicos.Ejercicio_07.Services.PersonaService;
 import java.util.Scanner;
 
